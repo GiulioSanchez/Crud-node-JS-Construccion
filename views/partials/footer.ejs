@@ -1,0 +1,59 @@
+</main>
+
+<footer class="bg-dark text-white py-3 mt-auto">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+       
+      </div>
+      <div class="col-md-6 text-end">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Ocultar alertas automáticamente después de 5 segundos
+    const alertas = document.querySelectorAll('.alert');
+    alertas.forEach(alerta => {
+      setTimeout(() => {
+        const bsAlert = new bootstrap.Alert(alerta);
+        bsAlert.close();
+      }, 5000);
+    });
+    
+    // Confirmación de eliminación
+    const botonesEliminar = document.querySelectorAll(".delete");
+    
+    botonesEliminar.forEach(boton => {
+      boton.addEventListener("click", (event) => {
+        event.preventDefault();
+        
+        Swal.fire({
+          title: 'Eliminar Material',
+          text: "¿Está seguro de eliminar este material?",
+          icon: 'warning',
+          footer: 'Sistema de Gestión de Materiales',
+          showCancelButton: true,
+          confirmButtonColor: '#dc3545',
+          cancelButtonColor: '#6c757d',
+          confirmButtonText: 'Sí, eliminar',
+          cancelButtonText: 'Cancelar'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = event.target.closest('a').getAttribute("href");
+          }
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>

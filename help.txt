@@ -1,0 +1,56 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+PS D:\crudcons> npm init -y
+Wrote to D:\crudcons\package.json:
+
+{
+  "name": "crudcons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+PS D:\crudcons> npm install express mysql2 ejs body-parser express-session
+>> npm install nodemon --save-dev
+
+added 100 packages, and audited 101 packages in 14s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+added 23 packages, and audited 124 packages in 7s
+
+21 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS D:\crudcons> npm run dev
+npm ERR! Missing script: "dev"
+npm ERR!
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\HP\AppData\Local\npm-cache\_logs\2025-04-27T23_24_44_500Z-debug-0.log
+PS D:\crudcons> npm run dev
+
+> construccionapp@1.0.0 dev
+> nodemon app.js
+
+[nodemon] 3.1.10
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node app.js`
+Servidor iniciado en http://localhost:3000
+Conexión exitosa a la base de datos

@@ -1,0 +1,41 @@
+<%- include('./partials/header') %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header bg-<%= tipo %> text-white">
+          <h4 class="mb-0">Error <%= error.status %></h4>
+        </div>
+        <div class="card-body">
+          <div class="alert alert-<%= tipo %>">
+            <%= mensaje %>
+          </div>
+          
+          <div class="text-center my-5">
+            <h3><i class="bi bi-exclamation-triangle display-4 text-warning"></i></h3>
+            <h3>Algo salió mal</h3>
+            <p class="lead">Lo sentimos por las molestias</p>
+          </div>
+          
+          <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+      
+      <% if (error.stack && error.stack !== '') { %>
+        <div class="card mt-4">
+          <div class="card-header bg-secondary text-white">
+            Detalles técnicos
+          </div>
+          <div class="card-body">
+            <pre class="bg-light p-3"><%= error.stack %></pre>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
